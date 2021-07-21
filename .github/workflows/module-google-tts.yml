@@ -22,18 +22,15 @@ jobs:
 
       - name: Install
         run: |
-          cd module-google-tts
           yarn cache clean
           yarn install --network-timeout 1000000
 
       - name: Build
-        run: |
-          cd module-google-tts
-          yarn build
+        run: yarn build
 
       - name: Compress
         run: |
-          cd module-google-tts/dist
+          cd ./dist
           npx bestzip ../module-google-tts.zip ./*
 
       - name: Upload
@@ -43,5 +40,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           host: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
-          src: ./module-google-tts/module-google-tts.zip
+          src: ./module-google-tts.zip
           dest: ./builds/${{ github.sha }}/modules/module-google-tts.zip
