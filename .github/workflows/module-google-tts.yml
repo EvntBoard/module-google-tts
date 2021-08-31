@@ -8,11 +8,7 @@ on:
 
 jobs:
   module-google-tts:
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out Git repository
@@ -28,23 +24,10 @@ jobs:
           yarn
           yarn build
 
-      - name: Pack Linux
-        if: startsWith(matrix.os, 'ubuntu')
+      - name: Pack
         run: |
           cd dist
-          npx bestzip ../module-google-tts-linux.zip .
-
-      - name: Pack Windows
-        if: startsWith(matrix.os, 'windows')
-        run: |
-          cd dist
-          npx bestzip ../module-google-tts-windows.zip .
-
-      - name: Pack Macos
-        if: startsWith(matrix.os, 'macos')
-        run: |
-          cd dist
-          npx bestzip ../module-google-tts-macos.zip .
+          npx bestzip ../module-google-tts.zip .
 
       - name: Release
         uses: softprops/action-gh-release@v1
