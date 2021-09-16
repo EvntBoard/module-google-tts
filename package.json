@@ -10,9 +10,16 @@
     "lint": "prettier --write src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvntBoard/module-google-tts.git"
+  },
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvntBoard/module-google-tts/issues"
+  },
+  "homepage": "https://github.com/EvntBoard/module-google-tts#readme",
   "dependencies": {
     "evntcom-js": "https://github.com/EvntBoard/evntcom-js.git",
     "google-tts-api": "^2.0.2",

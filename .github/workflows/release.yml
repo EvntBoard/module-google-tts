@@ -1,0 +1,48 @@
+name: Module Google TTS
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install wine
+        run: sudo apt install wine wine64
+
+      - name: Build
+        run: |
+          yarn
+          yarn build
+
+      - name: Artefact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Module Google TTS
+          path: ./dist/
+
+      - name: Pack
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          cd ./dist/
+          npx bestzip ../../google-tts.zip .
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: |
+            *.zip
