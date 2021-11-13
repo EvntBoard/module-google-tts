@@ -20,17 +20,19 @@ export class GoogleTtsConnexion {
       host: evntBoardHost,
     });
 
-    this.evntCom.onOpen = async () => {
+    this.evntCom.on('open', async () => {
       await this.evntCom.notify("newEvent", [
         "google-tts-load",
         null,
         { emitter: this.name },
       ]);
-    };
+    });
 
     this.evntCom.expose("setLang", this.setLang);
     this.evntCom.expose("getLang", this.getLang);
     this.evntCom.expose("generate", this.generate);
+
+    this.evntCom.connect();
   }
 
   setLang = async (lang: string) => {
