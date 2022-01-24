@@ -1,9 +1,9 @@
-import { EvntComNode } from "evntcom-js/dist/node";
+import { EvntCom } from "evntcom-js";
 import * as googleTTS from "google-tts-api";
 
 export class GoogleTtsConnexion {
   private name: string;
-  private evntCom: EvntComNode;
+  private evntCom: EvntCom;
   private lang: string;
 
   constructor(
@@ -14,7 +14,7 @@ export class GoogleTtsConnexion {
   ) {
     this.name = name;
     this.lang = lang;
-    this.evntCom = new EvntComNode({
+    this.evntCom = new EvntCom({
       name,
       port: evntBoardPort,
       host: evntBoardHost,
