@@ -14,6 +14,13 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
+"@evntboard/evntcom-node@https://github.com/EvntBoard/evntcom-node.git":
+  version "0.0.1"
+  resolved "https://github.com/EvntBoard/evntcom-node.git#a0f1aff3873f5523332257d82548c34d1f451908"
+  dependencies:
+    uuid "^8.3.2"
+    ws "^8.4.2"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -317,14 +324,6 @@ eslint-plugin-prettier@^2.2.0:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
 
-"evntcom-js@https://github.com/EvntBoard/evntcom-js.git":
-  version "1.0.0"
-  resolved "https://github.com/EvntBoard/evntcom-js.git#b7b7db9159e5842103df9067ed8f1354fa564bcf"
-  dependencies:
-    isomorphic-ws "^4.0.1"
-    uuid "^8.3.2"
-    ws "^8.4.2"
-
 fast-diff@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
@@ -517,11 +516,6 @@ is-yarn-global@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/is-yarn-global/-/is-yarn-global-0.3.0.tgz#d502d3382590ea3004893746754c89139973e232"
   integrity sha512-VjSeb/lHmkoyd8ryPVIKvOCn4D1koMqY+vqyjjUfc3xyKtP4dYOxM44sZrnqQSzSds3xyOrUTLTC9LVCVgLngw==
-
-isomorphic-ws@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-4.0.1.tgz#55fd4cd6c5e6491e76dc125938dd863f5cd4f2dc"
-  integrity sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==
 
 jest-docblock@^21.0.0:
   version "21.2.0"

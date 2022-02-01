@@ -1,4 +1,4 @@
-import { EvntCom } from "evntcom-js";
+import { EvntCom } from "@evntboard/evntcom-node";
 import * as googleTTS from "google-tts-api";
 
 export class GoogleTtsConnexion {

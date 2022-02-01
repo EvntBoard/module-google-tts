@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/EvntBoard/module-google-tts#readme",
   "dependencies": {
-    "evntcom-js": "https://github.com/EvntBoard/evntcom-js.git",
+    "@evntboard/evntcom-node": "https://github.com/EvntBoard/evntcom-node.git",
     "google-tts-api": "^2.0.2",
     "lodash": "^4.17.21"
   },
